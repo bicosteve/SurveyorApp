@@ -10,14 +10,16 @@ route.get(
     })
 );
 
-route.get('/auth/google/callback', passport.authenticate('google'));
+route.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
+    res.redirect('/surveys');
+});
 
 route.get('/api/logout', (req, res) => {
     req.logout();
-    res.send({ msg: 'User logged out!' });
+    res.redirect('/');
 });
 
-route.get('/api/user', (req, res) => {
+route.get('/api/auth_user', (req, res) => {
     res.send(req.user);
 });
 

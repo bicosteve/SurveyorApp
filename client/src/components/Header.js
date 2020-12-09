@@ -13,11 +13,18 @@ class Header extends Component {
                 return;
 
             case false:
-                return (
-                    <li>
-                        <a href='/auth/google'>Google</a>
-                    </li>
-                );
+                return [
+                    <li key='1'>
+                        <a href='/auth/google'>
+                            <i className='fa fa-google-plus-official fa-2x'></i>
+                        </a>
+                    </li>,
+                    <li key='2'>
+                        <a href='/auth/facebook'>
+                            <i className='fab fa-facebook fa-2x'></i>
+                        </a>
+                    </li>,
+                ];
 
             default:
                 return [
@@ -25,10 +32,12 @@ class Header extends Component {
                         <Stripe />
                     </li>,
                     <li key='3' style={{ margin: '0 7px' }}>
-                        Credits: {this.props.auth.credits}
+                        Bal - [{this.props.auth.credits}]
                     </li>,
                     <li key='2'>
-                        <a href='/api/logout'>Logout</a>
+                        <a href='/api/logout'>
+                            <i className='fa fa-sign-out'></i>
+                        </a>
                     </li>,
                 ];
         }

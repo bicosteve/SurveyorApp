@@ -8,6 +8,10 @@ import reduxThunk from 'redux-thunk';
 import App from './components/App';
 import reducers from './reducers';
 
+//dev axios helper
+import axios from 'axios';
+window.axios = axios;
+
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
@@ -16,3 +20,12 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+
+// const survey = {
+//     title: 'Trial Title',
+//     subject: 'We will appreciate your feedback',
+//     recipients: 'oloobico@gmail.com',
+//     body: 'We would love to hear if you like our servvices',
+// };
+
+// axios.post('/api/survey', survey);

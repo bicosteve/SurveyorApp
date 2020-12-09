@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import '../styles/header.css';
+
 import Stripe from './Stripe';
 
 class Header extends Component {
@@ -34,8 +36,8 @@ class Header extends Component {
 
     render() {
         return (
-            <nav>
-                <div className='container'>
+            <nav className='nav-header blue-grey darken-3'>
+                <div className='container '>
                     <div className='nav-wrapper'>
                         <Link
                             to={this.props.auth ? '/surveys' : '/'}

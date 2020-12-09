@@ -5,7 +5,9 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
+
 const keys = require('./config/keys');
 
 mongoose.connect(keys.mongoURI, {
@@ -28,6 +30,7 @@ app.use(passport.session());
 
 app.use(require('./routes/auth'));
 app.use(require('./routes/billing'));
+app.use(require('./routes/survey'));
 
 if (process.env.NODE_ENV === 'production') {
     //serving main.css and main.js from front end

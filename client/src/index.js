@@ -20,12 +20,3 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
-
-// const survey = {
-//     title: 'Trial Title',
-//     subject: 'We will appreciate your feedback',
-//     recipients: 'oloobico@gmail.com',
-//     body: 'We would love to hear if you like our servvices',
-// };
-
-// axios.post('/api/survey', survey);

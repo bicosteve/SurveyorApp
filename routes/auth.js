@@ -4,6 +4,19 @@ const express = require('express');
 const route = express();
 
 route.get(
+    '/auth/facebook',
+    passport.authenticate('facebook', { scope: ['public_profile', 'email'] })
+);
+
+route.get(
+    '/auth/facebook/callback',
+    passport.authenticate('facebook', { failureRedirect: '/' }),
+    (req, res) => {
+        res.redirect('/surveys');
+    }
+);
+
+route.get(
     '/auth/google',
     passport.authenticate('google', {
         scope: ['profile', 'email'],

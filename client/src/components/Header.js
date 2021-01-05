@@ -31,10 +31,15 @@ class Header extends Component {
                     <li key='1'>
                         <Stripe />
                     </li>,
+                    <li key='2'>
+                        <Link to='/surveys'>
+                            <i className='fa fa-plus'></i>
+                        </Link>
+                    </li>,
                     <li key='3' style={{ margin: '0 7px' }}>
                         Bal - [{this.props.auth.credits}]
                     </li>,
-                    <li key='2'>
+                    <li key='4'>
                         <a href='/api/logout'>
                             <i className='fa fa-sign-out'></i>
                         </a>
